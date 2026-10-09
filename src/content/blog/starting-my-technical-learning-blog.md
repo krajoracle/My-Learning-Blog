@@ -2,6 +2,8 @@
 title: 'Starting My Technical Learning Blog'
 description: 'My first steps building a public technical blog with Astro and VS Code.'
 pubDate: '2026-10-09'
+tags: ['Astro', 'VS Code', 'Learning']
+draft: false
 ---
 
 ## Why I started
