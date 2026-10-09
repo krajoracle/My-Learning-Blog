@@ -139,3 +139,46 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+/* Learning blog design */
+:root {
+  --accent: #2458c6;
+  --accent-dark: #173c8b;
+}
+body {
+  background: #f7f9fc;
+  color: #263346;
+  font-size: 18px;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+h2 {
+  font-size: 1.65rem;
+  margin-top: 2rem;
+}
+h3 {
+  font-size: 1.3rem;
+}
+a {
+  text-underline-offset: 0.2em;
+}
+a:hover {
+  color: var(--accent-dark);
+}
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+pre {
+  overflow-x: auto;
+}
+th, td {
+  padding: 0.65rem;
+  border-bottom: 1px solid #dce3eb;
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;
+  }
+}
