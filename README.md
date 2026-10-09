@@ -1,63 +1,41 @@
-# Astro Starter Kit: Blog
+# Raj Oracle — Technical Learning Blog
 
-```sh
-npm create astro@latest -- --template blog
-```
+A public learning blog about Python, AI, data engineering, and DevOps.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-Features:
+Astro, TypeScript, Markdown/MDX, and CSS.
+Static hosting: Cloudflare Pages.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## Local development
 
-## 🚀 Project Structure
+Install dependencies: `npm ci`
+Start the background dev server: `npm run astro -- dev --background`
+Check server status: `npm run astro -- dev status`
+Stop the server: `npm run astro -- dev stop`
+Build: `npm run build`
+Preview the build: `npm run preview`
 
-Inside of your Astro project, you'll see the following folders and files:
+## Writing articles
 
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+Add Markdown files to `src/content/blog/`.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Required metadata: title, description, pubDate.
+Optional metadata: updatedDate, heroImage, tags, draft.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Posts marked `draft: true` are excluded from article routes,
+listings, Topics, and RSS. Files committed to a public repository
+remain publicly readable.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+## Deployment
 
-Any static assets, like images, can be placed in the `public/` directory.
+Production branch: master
+Build command: npm run build
+Output directory: dist
 
-## 🧞 Commands
+Set the production URL in astro.config.mjs before the public launch.
 
-All commands are run from the root of the project, from a terminal:
+## Credits
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Created from the official Astro blog starter.
+The starter styling includes CSS based on Bear Blog.
