@@ -1,0 +1,40 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+import { getPublishedPosts } from '../utils/posts';
+
+const posts = await getPublishedPosts();
+const topics = [...new Set(posts.flatMap((post) => post.data.tags))]
+  .sort((a, b) => a.localeCompare(b));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`Topics | ${SITE_TITLE}`}
+      description="Browse technical learning articles by topic."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Topics</h1>
+      <p>Explore my learning notes by subject.</p>
+      {topics.length === 0 && <p>Topics will appear as articles are added.</p>}
+      {topics.map((topic) => (
+        <section>
+          <h2>{topic}</h2>
+          <ul>
+            {posts.filter((post) => post.data.tags.includes(topic)).map((post) => (
+              <li><a href={`/blog/${post.id}/`}>{post.data.title}</a></li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </main>
+    <Footer />
+  </body>
+</html>
